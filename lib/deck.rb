@@ -1,20 +1,22 @@
-require './card.rb'
+require 'card.rb'
 
 class Deck
+  attr_accessor :cards
+  
   def initialize
-    self.all_cards
-    
+    self.cards = []
+    all_cards
   end
   
-  def self.all_cards
-    all_cards = []
-    
+  def all_cards
     Card.values.each do |value|
       Card.suits.each do |suit|
-        all_cards << Card.new(value,suit)
+        self.cards << Card.new(value,suit)
       end
     end
-    
-    all_cards
+  end
+  
+  def shuffle_deck
+    self.cards.shuffle
   end
 end
