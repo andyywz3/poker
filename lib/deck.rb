@@ -19,4 +19,8 @@ class Deck
   def shuffle_deck
     self.cards.shuffle
   end
+  
+  def draw_card
+    self.cards.pop
+  end
 end
